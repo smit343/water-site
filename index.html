@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Water Authority | Ensuring Clean Water for All</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #555555;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(68, 133, 198, 0.88), rgba(207, 219, 232, 0.18)), url('HERO.jpeg');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -50px;
+            width: 2px;
+            height: 50px;
+            background-color: #00a3e0;
+        }
+        header {
+            background: transparent;
+        }
+        
+        header.scrolled {
+            background: rgba(16, 75, 134, 0.9);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        .counter {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #004c97;
+        }
+   
+        @keyframes pulse {
+            0% { background-color: rgba(255, 0, 0, 0.1); }
+            50% { background-color: rgba(255, 0, 0, 0.3); }
+            100% { background-color: rgba(255, 0, 0, 0.1); }
+        }
+        .director-card:hover .director-overlay {
+            opacity: 1;
+        }
+        .director-overlay {
+            background: rgba(0, 76, 151, 0.8);
+            transition: opacity 0.3s ease;
+        }
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+   
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="main-header">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="logo1.jpeg" alt="Water Refined Operating Services" class="h-14">
+
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-white hover:text-blue-200 font-semibold">Home</a>
+                <a href="#about" class="text-white hover:text-blue-200 font-semibold">About</a>
+                <a href="#services" class="text-white hover:text-blue-200 font-semibold">Services</a>
+                <a href="#education" class="text-white hover:text-blue-200 font-semibold">Education</a>
+                <a href="#news" class="text-white hover:text-blue-200 font-semibold">News</a>
+                <a href="#careers" class="text-white hover:text-blue-200 font-semibold">Careers</a>
+                <a href="#contact" class="text-white hover:text-blue-200 font-semibold">Contact</a>
+            </nav>
+            
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu fixed inset-y-0 right-0 w-64 bg-white shadow-lg z-50 p-4">
+            <div class="flex justify-end mb-4">
+                <button id="close-menu" class="text-gray-700">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-4">
+                <a href="#home" class="text-gray-700 hover:text-blue-800 font-semibold">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-blue-800 font-semibold">About</a>
+                <a href="#services" class="text-gray-700 hover:text-blue-800 font-semibold">Services</a>
+                <a href="#education" class="text-gray-700 hover:text-blue-800 font-semibold">Education</a>
+                <a href="#news" class="text-gray-700 hover:text-blue-800 font-semibold">News</a>
+                <a href="#careers" class="text-gray-700 hover:text-blue-800 font-semibold">Careers</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-800 font-semibold">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <!-- Hero Section (merged with header background) -->
+    <!-- Hero Section with your custom image -->
+    <section id="home" class="hero-bg flex items-center justify-center text-white pt-32 pb-20">
+        <div class="container mx-auto px-4 text-center flex flex-col text-center items-center">
+            <div class="mb-12"> <!-- Added margin-bottom to text content -->
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">Sustainable Water Solutions</h1>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Partnering for a Healthier Future</p>
+            </div>
+            
+            <!-- Button moved down with absolute positioning -->
+            <div class="absolute bottom-20 w-full flex justify-center">
+                <a href="#services" class="bg-white text-blue-800 hover:bg-blue-100 font-bold py-4 px-8 rounded-lg transition duration-300 inline-block">
+                    Explore Our Services
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Mission Statement -->
+    <section class="py-16 bg-white section">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-6">Our Mission</h2>
+                <p class="text-lg md:text-xl text-gray-700 mb-8">To provide high-quality water services through innovative solutions, environmental stewardship, and community partnerships while maintaining fiscal responsibility and operational excellence.</p>
+                <div class="w-24 h-1 bg-blue-500 mx-auto"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-blue-50 section">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6">
+                    <div class="counter" data-target="2500000">0</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mt-2">Customers Served</h3>
+                </div>
+                <div class="p-6">
+                    <div class="counter" data-target="150">0</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mt-2">Miles of Pipeline</h3>
+                </div>
+                <div class="p-6">
+                    <div class="counter" data-target="100">0</div>
+                    <h3 class="text-xl font-semibold text-blue-900 mt-2">Years of Service</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Our Services</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">We provide comprehensive water services to meet the needs of our communities.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-tools text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Operations & Maintenance</h3>
+                        <p class="text-gray-600">State-of-the-art treatment facilities ensure your water meets or exceeds all safety standards.</p>
+                        <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-water text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Project Management & Delivery</h3>
+                        <p class="text-gray-600">Our extensive network delivers clean water to homes and businesses 24/7.</p>
+                        <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-building text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Infrastructure Support</h3>
+                        <p class="text-gray-600">Proactive maintenance and upgrades keep our water system reliable.</p>
+                        <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-dollar text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Financial Services</h3>
+                        <p class="text-gray-600">Rigorous testing protocols ensure your water is always safe to drink.</p>
+                        <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-leaf text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Information & Data</h3>
+                        <p class="text-gray-600">We help customers use water wisely through education and incentives.</p>
+                        <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-person text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Training</h3>
+                        <p class="text-gray-600">24/7 emergency crews respond quickly to water main breaks and other issues.</p>
+                        <a href="#" class="inline-block mt-4 text-blue-600 font-semibold hover:text-blue-800">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-blue-800 text-white section">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Have a Water Service Question?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Our customer service team is ready to assist you with any questions about your water service.</p>
+            <a href="#contact" class="bg-white text-blue-800 hover:bg-blue-100 font-bold py-3 px-8 rounded-lg transition duration-300">Contact Us Today</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">About Us</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Serving our community with pride for over a century.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8 items-center mb-16">
+                <div class="lg:w-1/2">
+                    <img src="1.jpeg" alt="Water treatment plant" class="rounded-lg shadow-lg w-full">
+                </div>
+                <div class="lg:w-1/2">
+                    <h3 class="text-2xl font-bold text-blue-900 mb-4">Our History</h3>
+                    <p class="text-gray-600 mb-4">Founded in 1920, the National Water Authority has grown from a small municipal water department to a regional leader in water services. Through decades of innovation and investment, we've maintained our commitment to quality and service.</p>
+                    <p class="text-gray-600">Today, we serve over 2.5 million residents across five counties, operating treatment plants, reservoirs, and thousands of miles of pipeline.</p>
+                </div>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="mb-16">
+                <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">Our Journey</h3>
+                <div class="relative">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Timeline Item 1 -->
+                        <div class="timeline-item relative bg-blue-50 p-6 rounded-lg text-center">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">1920</div>
+                            <h4 class="text-xl font-semibold text-blue-900 mb-2">Foundation</h4>
+                            <p class="text-gray-600">Municipal Water Department established to serve the growing city.</p>
+                        </div>
+                        
+                        <!-- Timeline Item 2 -->
+                        <div class="timeline-item relative bg-blue-50 p-6 rounded-lg text-center">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">1955</div>
+                            <h4 class="text-xl font-semibold text-blue-900 mb-2">First Treatment Plant</h4>
+                            <p class="text-gray-600">Opened our first modern water treatment facility.</p>
+                        </div>
+                        
+                        <!-- Timeline Item 3 -->
+                        <div class="timeline-item relative bg-blue-50 p-6 rounded-lg text-center">
+                            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">1982</div>
+                            <h4 class="text-xl font-semibold text-blue-900 mb-2">Regional Expansion</h4>
+                            <p class="text-gray-600">Began serving neighboring communities through regional partnerships.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Board of Directors -->
+            <div>
+                <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">Board of Directors</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Director 1 -->
+                    <div class="director-card relative rounded-lg overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Director" class="w-full h-64 object-cover">
+                        <div class="director-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                            <div class="text-white text-center p-4">
+                                <h4 class="text-xl font-bold">Sarah Johnson</h4>
+                                <p class="text-blue-200">Chairperson</p>
+                                <p class="text-sm mt-2">Environmental Scientist</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Director 2 -->
+                    <div class="director-card relative rounded-lg overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Director" class="w-full h-64 object-cover">
+                        <div class="director-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                            <div class="text-white text-center p-4">
+                                <h4 class="text-xl font-bold">Michael Chen</h4>
+                                <p class="text-blue-200">Vice Chair</p>
+                                <p class="text-sm mt-2">Civil Engineer</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Director 3 -->
+                    <div class="director-card relative rounded-lg overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Director" class="w-full h-64 object-cover">
+                        <div class="director-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                            <div class="text-white text-center p-4">
+                                <h4 class="text-xl font-bold">Lisa Rodriguez</h4>
+                                <p class="text-blue-200">Secretary</p>
+                                <p class="text-sm mt-2">Public Health Official</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Director 4 -->
+                    <div class="director-card relative rounded-lg overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Director" class="w-full h-64 object-cover">
+                        <div class="director-overlay absolute inset-0 flex items-center justify-center opacity-0">
+                            <div class="text-white text-center p-4">
+                                <h4 class="text-xl font-bold">Robert Williams</h4>
+                                <p class="text-blue-200">Treasurer</p>
+                                <p class="text-sm mt-2">Financial Analyst</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Water Education Section -->
+    <section id="education" class="py-16 bg-blue-50 section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Water Education</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Learn about water conservation, treatment processes, and how you can help protect our most precious resource.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- Education Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-recycle text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">The Water Cycle</h3>
+                        <p class="text-gray-600 mb-4">Understand how water moves through our environment and how we capture and treat it for your use.</p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Education Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-shower text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Conservation Tips</h3>
+                        <p class="text-gray-600 mb-4">Simple changes in your daily routine can save thousands of gallons of water each year.</p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- Education Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <div class="h-48 bg-blue-100 flex items-center justify-center">
+                        <i class="fas fa-filter text-6xl text-blue-600"></i>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Treatment Process</h3>
+                        <p class="text-gray-600 mb-4">See how we transform raw water from rivers and reservoirs into safe drinking water.</p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQs -->
+            <div class="max-w-3xl mx-auto">
+                <h3 class="text-2xl font-bold text-blue-900 mb-6 text-center">Frequently Asked Questions</h3>
+                
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-toggle w-full text-left p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-blue-900">Is my tap water safe to drink?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden p-4 bg-gray-50 border-t border-gray-200">
+                            <p class="text-gray-600">Yes, your tap water meets or exceeds all federal and state drinking water standards. We conduct over 100,000 water quality tests annually to ensure your water is safe. You can view our annual water quality reports on our website.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-toggle w-full text-left p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-blue-900">What should I do during a boil water advisory?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden p-4 bg-gray-50 border-t border-gray-200">
+                            <p class="text-gray-600">During a boil water advisory, you should boil tap water vigorously for at least one minute before using it for drinking, brushing teeth, washing fruits/vegetables, preparing food, making ice, or mixing baby formula. Alternatively, use bottled water. You do not need to boil water for showering or laundry.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-toggle w-full text-left p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-blue-900">How can I report a water main break?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden p-4 bg-gray-50 border-t border-gray-200">
+                            <p class="text-gray-600">To report a water main break or other emergency, call our 24-hour emergency line at 1-800-555-WATER (9283). For non-emergency service requests, you can use our online form or call customer service during business hours.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="border border-gray-200 rounded-lg overflow-hidden">
+                        <button class="faq-toggle w-full text-left p-4 bg-white hover:bg-gray-50 focus:outline-none">
+                            <div class="flex justify-between items-center">
+                                <span class="font-semibold text-blue-900">Why does my water sometimes appear cloudy?</span>
+                                <i class="fas fa-chevron-down text-blue-600 transition-transform duration-300"></i>
+                            </div>
+                        </button>
+                        <div class="faq-content hidden p-4 bg-gray-50 border-t border-gray-200">
+                            <p class="text-gray-600">Cloudy water is usually caused by tiny air bubbles in the water, which are harmless and will clear if you let the water sit for a minute. This can happen when the water pressure changes in the pipes. If the cloudiness doesn't clear after a few minutes or has a color, please contact us.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsroom Section -->
+    <section id="news" class="py-16 bg-white section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Newsroom</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Stay informed about our latest projects, initiatives, and water news.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                <!-- News Article 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1545173168-9f1947eebb70?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-blue-600 mb-2">June 15, 2023 | Infrastructure</div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">New Water Treatment Plant Breaks Ground</h3>
+                        <p class="text-gray-600 mb-4">Construction begins on state-of-the-art facility that will serve 500,000 additional residents.</p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- News Article 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-blue-600 mb-2">May 28, 2023 | Conservation</div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">Summer Water Conservation Program Launched</h3>
+                        <p class="text-gray-600 mb-4">New rebates available for water-efficient appliances and landscaping.</p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- News Article 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 hover:shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="News" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="text-sm text-blue-600 mb-2">April 10, 2023 | Awards</div>
+                        <h3 class="text-xl font-bold text-blue-900 mb-3">NWA Receives National Excellence Award</h3>
+                        <p class="text-gray-600 mb-4">Recognized for outstanding water quality and customer service.</p>
+                        <a href="#" class="text-blue-600 font-semibold hover:text-blue-800">Read More →</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">View All News</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Careers Section -->
+    <section id="careers" class="py-16 bg-blue-800 text-white section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Careers</h2>
+                <p class="text-xl max-w-2xl mx-auto">Join our team and help deliver clean water to your community.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Job Listing 1 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Water Treatment Plant Operator</h3>
+                        <div class="flex flex-wrap gap-4 text-sm mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full-time</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">$25 - $35/hr</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Central Treatment Plant</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Operate and maintain equipment at our state-of-the-art water treatment facility. Requires certification and mechanical aptitude.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Posted: June 1, 2023</span>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job Listing 2 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Customer Service Representative</h3>
+                        <div class="flex flex-wrap gap-4 text-sm mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full-time</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">$20 - $28/hr</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Downtown Office</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Assist customers with billing inquiries, service requests, and water conservation programs. Excellent communication skills required.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Posted: May 25, 2023</span>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Job Listing 3 -->
+                <div class="bg-white text-gray-800 rounded-lg shadow-md mb-6 overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">Civil Engineer (Water Infrastructure)</h3>
+                        <div class="flex flex-wrap gap-4 text-sm mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full-time</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">$75,000 - $95,000/yr</span>
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Engineering Dept</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Design and oversee water infrastructure projects. PE license preferred but not required.</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm text-gray-500">Posted: May 15, 2023</span>
+                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Apply Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-8">
+                <p class="mb-4">Don't see the perfect position? Submit your resume for future opportunities.</p>
+                <button id="upload-resume" class="bg-white text-blue-800 hover:bg-blue-100 font-bold py-3 px-8 rounded-lg transition duration-300">Upload Resume</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Upload Modal -->
+    <div id="resume-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg shadow-xl p-6 w-full max-w-md">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold text-blue-900">Submit Your Resume</h3>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form>
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 mb-2">Full Name</label>
+                    <input type="text" id="name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 mb-2">Email</label>
+                    <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                    <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="resume" class="block text-gray-700 mb-2">Upload Resume (PDF or DOC)</label>
+                    <input type="file" id="resume" accept=".pdf,.doc,.docx" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="position" class="block text-gray-700 mb-2">Position of Interest</label>
+                    <select id="position" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="">Any Position</option>
+                        <option value="operations">Operations</option>
+                        <option value="engineering">Engineering</option>
+                        <option value="customer-service">Customer Service</option>
+                        <option value="administration">Administration</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white section">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">We're here to help with any questions about your water service.</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-1/2">
+                    <!-- Contact Info -->
+                    <div class="bg-blue-50 rounded-lg p-6 mb-8">
+                        <h3 class="text-xl font-bold text-blue-900 mb-4">General Inquiries</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Customer Service</h4>
+                                    <p class="text-gray-600">1-800-555-WATER (9283)</p>
+                                    <p class="text-gray-600 text-sm">Monday-Friday, 8am-5pm</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Email</h4>
+                                    <p class="text-gray-600">customerservice@nwa.gov</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-blue-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Main Office</h4>
+                                    <p class="text-gray-600">123 Waterfront Drive</p>
+                                    <p class="text-gray-600">Capital City, CC 12345</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Emergency Info -->
+                    <div class="bg-red-50 rounded-lg p-6 border border-red-200">
+                        <h3 class="text-xl font-bold text-red-900 mb-4">Emergency Contacts</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-exclamation-triangle text-red-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">24-Hour Emergency Line</h4>
+                                    <p class="text-gray-600">1-800-555-EMER (3637)</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-tools text-red-600 mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">After-Hours Service</h4>
+                                    <p class="text-gray-600">For water main breaks, no water service, or other urgent issues</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <!-- Contact Form -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h3 class="text-xl font-bold text-blue-900 mb-6">Send Us a Message</h3>
+                        <form>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="first-name" class="block text-gray-700 mb-2">First Name</label>
+                                    <input type="text" id="first-name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-gray-700 mb-2">Last Name</label>
+                                    <input type="text" id="last-name" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="phone" class="block text-gray-700 mb-2">Phone</label>
+                                <input type="tel" id="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div class="mb-4">
+                                <label for="subject" class="block text-gray-700 mb-2">Subject</label>
+                                <select id="subject" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="">Select a topic</option>
+                                    <option value="billing">Billing Question</option>
+                                    <option value="service">Service Issue</option>
+                                    <option value="quality">Water Quality</option>
+                                    <option value="conservation">Conservation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 mb-2">Message</label>
+                                <textarea id="message" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map -->
+            <div class="mt-16 rounded-lg overflow-hidden shadow-lg">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.215256012078!2d-73.98784468459384!3d40.74844047932881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b3117469%3A0xd134e199a405a163!2sEmpire%20State%20Building!5e0!3m2!1sen!2sus!4v1623861234567!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Footer Column 1 -->
+                <div>
+                    <img src="https://via.placeholder.com/180x60?text=NWA" alt="National Water Authority" class="h-12 mb-4">
+                    <p class="text-blue-200 mb-4">Providing clean, safe water to our communities for over 100 years.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Footer Column 2 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-blue-200 hover:text-white">Home</a></li>
+                        <li><a href="#about" class="text-blue-200 hover:text-white">About Us</a></li>
+                        <li><a href="#services" class="text-blue-200 hover:text-white">Services</a></li>
+                        <li><a href="#education" class="text-blue-200 hover:text-white">Water Education</a></li>
+                        <li><a href="#news" class="text-blue-200 hover:text-white">Newsroom</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 3 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Resources</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-blue-200 hover:text-white">Water Quality Reports</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Conservation Tips</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Frequently Asked Questions</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Forms & Documents</a></li>
+                        <li><a href="#" class="text-blue-200 hover:text-white">Careers</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer Column 4 -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Contact</h3>
+                    <address class="not-italic space-y-2">
+                        <p class="text-blue-200">123 Waterfront Drive</p>
+                        <p class="text-blue-200">Capital City, CC 12345</p>
+                        <p class="text-blue-200">Phone: 1-800-555-WATER</p>
+                        <p class="text-blue-200">Email: info@nwa.gov</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-blue-800 text-center text-blue-300 text-sm">
+                <p>&copy; 2023 National Water Authority. All rights reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a> | <a href="#" class="hover:text-white">Accessibility</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Add this to your existing script section
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenu = document.getElementById('close-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+        
+        // Resume Modal
+        const uploadResume = document.getElementById('upload-resume');
+        const resumeModal = document.getElementById('resume-modal');
+        const closeModal = document.getElementById('close-modal');
+        
+        uploadResume.addEventListener('click', () => {
+            resumeModal.classList.remove('hidden');
+        });
+        
+        closeModal.addEventListener('click', () => {
+            resumeModal.classList.add('hidden');
+        });
+        
+        // FAQ Toggle
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('i');
+                
+                content.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // Scroll Animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Counter Animation
+        const counters = document.querySelectorAll('.counter');
+        const speed = 200;
+        
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            });
+        }
+        
+        // Start counters when stats section is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+        
+        const statsSection = document.querySelector('.bg-blue-50');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileMenu.classList.remove('open');
+                }
+            });
+        });
+    </script>
+<p style="border-radius: 8px; text-align: center; font-size: 12px; color: #fff; margin-top: 16px;position: fixed; left: 8px; bottom: 8px; z-index: 10; background: rgba(0, 0, 0, 0.8); padding: 4px 8px;">Made with <img src="https://enzostvs-deepsite.hf.space/logo.svg" alt="DeepSite Logo" style="width: 16px; height: 16px; vertical-align: middle;display:inline-block;margin-right:3px;filter:brightness(0) invert(1);"><a href="https://enzostvs-deepsite.hf.space" style="color: #fff;text-decoration: underline;" target="_blank" >DeepSite</a> - 🧬 <a href="https://enzostvs-deepsite.hf.space?remix=asl121/water" style="color: #fff;text-decoration: underline;" target="_blank" >Remix</a></p></body>
+</html>
