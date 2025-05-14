@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>National Water Authority | Ensuring Clean Water for All</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -12,11 +12,26 @@
             font-family: 'Open Sans', sans-serif;
             color: #555555;
         }
-        .hero-bg {
-            background-image: linear-gradient(rgba(68, 133, 198, 0.88), rgba(207, 219, 232, 0.18)), url('HERO.jpeg');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
+        
+        .h-screen-80 {
+            height: 80vh;
+            min-height: 400px;
+        }
+        section#home {
+            padding-top: 80px; /* Matches header height */
+        }
+        
+        /* Adjust mobile menu colors */
+        .mobile-menu {
+            background-color: white;
+        }
+        
+        .mobile-menu a {
+            color: #1a365d;
+        }
+        
+        .mobile-menu a:hover {
+            color: #2c5282;
         }
         .section {
             opacity: 0;
@@ -34,10 +49,10 @@
             bottom: -50px;
             width: 2px;
             height: 50px;
-            background-color: #00a3e0;
+            
         }
         header {
-            background: transparent;
+            transition: all 0.3s ease;
         }
         
         header.scrolled {
@@ -53,6 +68,7 @@
             font-weight: 700;
             color: #004c97;
         }
+    
    
         @keyframes pulse {
             0% { background-color: rgba(255, 0, 0, 0.1); }
@@ -73,27 +89,188 @@
         .mobile-menu.open {
             transform: translateX(0);
         }
+        /* Hero Section Styles */
+        .hero-bg {
+            background-image: url('HERO.PNg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 400px; /* Fallback for older browsers */
+        }
+        
+        /* Modern full-viewport height with fallback */
+        .h-screen-80 {
+            height: 80vh;
+            min-height: 400px;
+        }
+        
+        /* Overlay for better text readability */
+        .hero-bg::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(103, 95, 95, 0.3);
+            z-index: 1;
+        }
+        
+        /* Hero content container */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        /* Text styles */
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            line-height: 1.4;
+        }
+        
+        /* Button styles */
+        .hero-button {
+            display: inline-block;
+            background: white;
+            color: #004c97;
+            font-weight: 800;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            font-size: 1rem;
+        }
+        
+        .hero-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .h-screen-80 {
+                height: 90vh;
+                min-height: 500px;
+                background-attachment: scroll; /* Prevent parallax on mobile */
+            }
+            
+            .hero-title {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .hero-button {
+                padding: 12px 24px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .h-screen-80 {
+                height: 100vh;
+                min-height: 600px;
+            }
+            
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            /* iOS specific fixes */
+            @supports (-webkit-touch-callout: none) {
+                .h-screen-80 {
+                    height: -webkit-fill-available;
+                    min-height: -webkit-fill-available;
+                }
+            }
+        }
+        /* Static Wave Divider */
+        .wave-divider {
+          width: 100%;
+          height: 60px; /* Adjust height as needed */
+          margin-top: -2px; /* Eliminates any gap */
+          line-height: 0;
+          transform: rotate(360deg); /* Flips wave downward */
+        }
+        
+        .wave-divider svg {
+          display: block;
+          width: 100%;
+          height: 100%;
+        }
+        
+        /* Color matching your hero section */
+        .wave-divider path {
+          fill: #4fade0; /* White to match your current hero overlay */
+        }
+        
+        /* For a blue wave instead, use your brand color: */
+        /* .wave-divider path { fill: #004c97; } */
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+          .wave-divider {
+            height: 40px; /* Smaller wave on mobile */
+          }
+        }
+   
+            
     </style>
 </head>
 <body class="bg-gray-50">
    
 
     <!-- Header -->
-    <header class="fixed w-full z-50 transition-all duration-300" id="main-header">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center">
-                <img src="logo1.jpeg" alt="Water Refined Operating Services" class="h-14">
-
+    <header class="fixed w-full z-50 bg-blue-900 shadow-md"> <!-- Changed to solid white background -->
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="logo1.jpeg" alt="WROS" class="h-12"> <!-- Reduced height slightly -->
+                <div class="h-12 border-l border-gray-300"></div>
+                <div class="flex flex-col justify-center text-blue-900"> <!-- Changed text color -->
+                    <span class="font-bold text-white text-lg leading-tight">WATER REFINED</span>
+                    <span class="font-medium text-sm text-white leading-tight">OPERATING SERVICES</span>
+                </div>
             </div>
             
-            <nav class="hidden md:flex space-x-8">
-                <a href="#home" class="text-white hover:text-blue-200 font-semibold">Home</a>
-                <a href="#about" class="text-white hover:text-blue-200 font-semibold">About</a>
-                <a href="#services" class="text-white hover:text-blue-200 font-semibold">Services</a>
-                <a href="#education" class="text-white hover:text-blue-200 font-semibold">Education</a>
-                <a href="#news" class="text-white hover:text-blue-200 font-semibold">News</a>
-                <a href="#careers" class="text-white hover:text-blue-200 font-semibold">Careers</a>
-                <a href="#contact" class="text-white hover:text-blue-200 font-semibold">Contact</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#home" class="text-white hover:text-blue-200 font-bold">Home</a>
+                <a href="#about" class="text-white hover:text-blue-200 font-bold">About</a>
+                <a href="#services" class="text-white hover:text-blue-200 font-bold">Services</a>
+                <a href="#education" class="text-white hover:text-blue-200 font-bold">Education</a>
+                <a href="#news" class="text-white hover:text-blue-200 font-bold">News</a>
+                <a href="#careers" class="text-white hover:text-blue-200 font-bold">Careers</a>
+                <a href="#contact" class="text-white hover:text-blue-200 font-bold">Contact</a>
             </nav>
             
             <button id="mobile-menu-button" class="md:hidden text-white">
@@ -122,23 +299,26 @@
 
 
     <!-- Hero Section -->
-    <!-- Hero Section (merged with header background) -->
-    <!-- Hero Section with your custom image -->
-    <section id="home" class="hero-bg flex items-center justify-center text-white pt-32 pb-20">
-        <div class="container mx-auto px-4 text-center flex flex-col text-center items-center">
-            <div class="mb-12"> <!-- Added margin-bottom to text content -->
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">Sustainable Water Solutions</h1>
-                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Partnering for a Healthier Future</p>
-            </div>
-            
-            <!-- Button moved down with absolute positioning -->
-            <div class="absolute bottom-20 w-full flex justify-center">
-                <a href="#services" class="bg-white text-blue-800 hover:bg-blue-100 font-bold py-4 px-8 rounded-lg transition duration-300 inline-block">
-                    Explore Our Services
-                </a>
+    <!-- Hero Section -->
+    <section id="home" class="pt-16">
+        <div class="hero-bg h-screen-80">
+            <div class="hero-content mb-20">
+                <h2 class="hero-title mb-2">Your Partner in Water Purity</h2>
+
+                <a href="#services" class="hero-button bg-blue-800 font-bold text-lg text-white">Explore Our Services</a>
             </div>
         </div>
     </section>
+
+    <!-- Place this right after your hero section -->
+    <!-- Place this immediately after your hero section closing tag -->
+    <div class="wave-divider">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#004c97"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#004c97"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#004c97"></path>
+      </svg>
+    </div>
     
     <!-- Mission Statement -->
     <section class="py-16 bg-white section">
@@ -312,59 +492,6 @@
                 </div>
             </div>
             
-            <!-- Board of Directors -->
-            <div>
-                <h3 class="text-2xl font-bold text-blue-900 mb-8 text-center">Board of Directors</h3>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <!-- Director 1 -->
-                    <div class="director-card relative rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Director" class="w-full h-64 object-cover">
-                        <div class="director-overlay absolute inset-0 flex items-center justify-center opacity-0">
-                            <div class="text-white text-center p-4">
-                                <h4 class="text-xl font-bold">Sarah Johnson</h4>
-                                <p class="text-blue-200">Chairperson</p>
-                                <p class="text-sm mt-2">Environmental Scientist</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Director 2 -->
-                    <div class="director-card relative rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Director" class="w-full h-64 object-cover">
-                        <div class="director-overlay absolute inset-0 flex items-center justify-center opacity-0">
-                            <div class="text-white text-center p-4">
-                                <h4 class="text-xl font-bold">Michael Chen</h4>
-                                <p class="text-blue-200">Vice Chair</p>
-                                <p class="text-sm mt-2">Civil Engineer</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Director 3 -->
-                    <div class="director-card relative rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Director" class="w-full h-64 object-cover">
-                        <div class="director-overlay absolute inset-0 flex items-center justify-center opacity-0">
-                            <div class="text-white text-center p-4">
-                                <h4 class="text-xl font-bold">Lisa Rodriguez</h4>
-                                <p class="text-blue-200">Secretary</p>
-                                <p class="text-sm mt-2">Public Health Official</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Director 4 -->
-                    <div class="director-card relative rounded-lg overflow-hidden shadow-md">
-                        <img src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" alt="Director" class="w-full h-64 object-cover">
-                        <div class="director-overlay absolute inset-0 flex items-center justify-center opacity-0">
-                            <div class="text-white text-center p-4">
-                                <h4 class="text-xl font-bold">Robert Williams</h4>
-                                <p class="text-blue-200">Treasurer</p>
-                                <p class="text-sm mt-2">Financial Analyst</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -752,7 +879,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
                 <!-- Footer Column 1 -->
                 <div>
-                    <img src="https://via.placeholder.com/180x60?text=NWA" alt="National Water Authority" class="h-12 mb-4">
+                    <img src="logo1.jpeg" alt="National Water Authority" class="h-12 mb-4">
                     <p class="text-blue-200 mb-4">Providing clean, safe water to our communities for over 100 years.</p>
                     <div class="flex space-x-4">
                         <a href="#" class="text-white hover:text-blue-300"><i class="fab fa-facebook-f"></i></a>
