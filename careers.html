@@ -86,6 +86,9 @@
                             <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Apply Now</a>
                         </div>
                     </div>
+                    <button onclick="openJobModal('job1')" class="text-blue-700 font-semibold underline hover:text-blue-900 mt-2 pl-4 mb-2">
+                        View Details
+                    </button>
                 </div>
                 
                 <!-- Job Listing 2 -->
@@ -103,24 +106,12 @@
                             <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Apply Now</a>
                         </div>
                     </div>
+                    <button onclick="openJobModal('job2')" class="text-blue-700 font-semibold underline hover:text-blue-900 mt-2 pl-4 mb-2">
+                        View Details
+                    </button>
                 </div>
                 
-                <!-- Job Listing 3 -->
-                <div class="bg-white text-gray-800 rounded-lg shadow-md mb-6 overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-blue-900 mb-2">Civil Engineer (Water Infrastructure)</h3>
-                        <div class="flex flex-wrap gap-4 text-sm mb-4">
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Full-time</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">$75,000 - $95,000/yr</span>
-                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full">Engineering Dept</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">Design and oversee water infrastructure projects. PE license preferred but not required.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-sm text-gray-500">Posted: May 15, 2023</span>
-                            <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">Apply Now</a>
-                        </div>
-                    </div>
-                </div>
+               
             </div>
             
             <div class="text-center mt-8">
@@ -260,6 +251,113 @@
             resumeModal.classList.add('hidden');
         });
   </script>
+  <script>
+      function openJobModal(id) {
+        document.getElementById(id + '-modal').classList.remove('hidden');
+      }
+    
+      function closeJobModal(id) {
+        document.getElementById(id + '-modal').classList.add('hidden');
+      }
+   </script>
+
+  <!-- Job Detail Modal: Water Treatment Plant Operator -->
+  <div id="job1-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden px-4">
+    <div class="bg-white rounded-lg max-w-2xl w-full p-6 relative shadow-xl overflow-y-auto max-h-[90vh]">
+      <button onclick="closeJobModal('job1')" class="absolute top-3 right-4 text-gray-600 hover:text-red-600 text-2xl">
+        &times;
+      </button>
+      <h2 class="text-2xl font-bold text-blue-900 mb-2">Water Treatment Plant Operator</h2>
+      <p class="text-sm text-gray-500 mb-4">Location: Central Treatment Plant | Job Type: Full-time | Pay: $25 - $35/hr</p>
+  
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Position Overview:</h3>
+      <p class="text-gray-700 mb-4">
+        We are seeking a qualified and motivated Water Treatment Plant Operator to oversee and manage the daily operations of our modern water treatment facility. The ideal candidate will ensure that water treatment processes meet safety, environmental, and regulatory standards, while maintaining optimal plant performance.
+      </p>
+  
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Key Responsibilities:</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
+        <li>Monitor, operate, and maintain water treatment equipment and systems.</li>
+        <li>Collect and analyze water samples to ensure quality standards are met.</li>
+        <li>Record operational data and prepare regular reports.</li>
+        <li>Perform routine maintenance and minor repairs on mechanical components.</li>
+        <li>Respond to alarms, troubleshoot issues, and take corrective action as needed.</li>
+        <li>Ensure compliance with EPA and local water quality regulations.</li>
+      </ul>
+  
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Qualifications:</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
+        <li>High school diploma or GED (required).</li>
+        <li>Valid Class B or higher Water Treatment Operator Certification.</li>
+        <li>2+ years of experience in water or wastewater plant operations preferred.</li>
+        <li>Strong mechanical and analytical skills.</li>
+        <li>Ability to work rotating shifts, weekends, and respond to emergencies.</li>
+      </ul>
+  
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Work Conditions & Benefits:</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
+        <li>Full-time position with rotating shift schedules.</li>
+        <li>Competitive hourly wage: $25–$35/hr depending on experience.</li>
+        <li>Health, dental, vision insurance, and retirement plan.</li>
+        <li>PPE and training provided.</li>
+      </ul>
+  
+      <div class="mt-6 text-right">
+        <a href="mailto:jay@wros.info?subject=Application - Water Treatment Plant Operator" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Job Detail Modal: Customer Service Representative -->
+  <div id="job2-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden px-4">
+    <div class="bg-white rounded-lg max-w-2xl w-full p-6 relative shadow-xl overflow-y-auto max-h-[90vh]">
+      <button onclick="closeJobModal('job2')" class="absolute top-3 right-4 text-gray-600 hover:text-red-600 text-2xl">
+        &times;
+      </button>
+      <h2 class="text-2xl font-bold text-blue-900 mb-2">Customer Service Representative</h2>
+      <p class="text-sm text-gray-500 mb-4">Location: Downtown Office | Job Type: Full-time | Pay: $20 - $28/hr</p>
+  
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Position Overview:</h3>
+      <p class="text-gray-700 mb-4">
+        As a Customer Service Representative at WROS, you will serve as the frontline connection between the public and our wastewater utility services. You will handle inquiries, service requests, and account support, ensuring a high level of customer satisfaction while navigating utility policies and systems.
+      </p>
+  
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Key Responsibilities:</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
+        <li>Answer customer phone calls, emails, and in-person inquiries regarding wastewater services, billing, and account management.</li>
+        <li>Assist with service requests, account creation/termination, and payment plans.</li>
+        <li>Document all customer interactions and maintain accurate service records.</li>
+        <li>Collaborate with field service teams and billing department to resolve escalated issues.</li>
+        <li>Educate customers about conservation efforts and service guidelines.</li>
+      </ul>
+  
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Qualifications:</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
+        <li>High school diploma or GED (required); Associate’s degree preferred.</li>
+        <li>1–2 years of experience in customer service, preferably in a utility or municipal environment.</li>
+        <li>Strong communication, problem-solving, and conflict resolution skills.</li>
+        <li>Ability to handle high call volumes and multitask effectively.</li>
+        <li>Familiarity with CRM systems or utility billing software is a plus.</li>
+      </ul>
+  
+      <h3 class="text-lg font-semibold text-blue-800 mb-2">Work Conditions & Benefits:</h3>
+      <ul class="list-disc list-inside text-gray-700 space-y-1 mb-4">
+        <li>Full-time office-based position (Monday–Friday, 8am–5pm).</li>
+        <li>Pay range: $20–$28/hr based on experience and qualifications.</li>
+        <li>Health, dental, and vision insurance; retirement plan; paid leave.</li>
+        <li>Ongoing training and career advancement opportunities within WROS.</li>
+      </ul>
+  
+      <div class="mt-6 text-right">
+        <a href="mailto:jay@wros.info?subject=Application - Customer Service Representative" class="bg-blue-700 hover:bg-blue-800 text-white font-bold py-2 px-6 rounded-full transition duration-300">
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </div>
+
      
 </body>
 </html>
